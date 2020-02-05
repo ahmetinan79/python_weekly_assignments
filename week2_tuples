@@ -1,0 +1,31 @@
+# 7.1 - Convert a tuple to a string and print.
+tup1 = ('n', 'e', 't', 'h', 'e', 'r', 'l', 'a', 'n', 'd', 's')
+print("".join(tup1))  # We use join function to combine the elements of tuple into a string.
+
+# # 7.2 - unzip a list of tuples into individual lists and print.
+tup2 = [(3, 6), (5, 8), (7, 4)]
+print([(tup2[0][0], tup2[1][0], tup2[2][0]), (tup2[0][1], tup2[1][1], tup2[2][1])])
+# We use indexing to unzip the elements of the tuple.
+
+# 7.3 -  convert a list of tuples into a dictionary and print.
+tup3 = [("a", 1), ("a", 2), ("a", 3), ("b", 1), ("b", 2), ("c", 1)]
+my_dict = {}  # We define a dictionary to store our pairs.
+
+for char in tup3:  # We form a for loop to pair the elements of the tuple.
+    if char[0] not in my_dict:  # If there is not a key in the dictionary yet, first we need to have a key,value pair.
+        # Otherwise, our append function that we want to use gives a key error.
+        if char[0] == "a":  # We pair each letter with letters with the help of indexes.
+            my_dict["a"] = [char[1]]
+        elif char[0] == "b":
+            my_dict["b"] = [char[1]]
+        elif char[0] == "c":
+            my_dict["c"] = [char[1]]
+    else:  # If there is a key defined in dictionary, then we add numbers as a list of values.
+        if char[0] == "a":
+            my_dict["a"].append(char[1])
+        elif char[0] == "b":
+            my_dict["b"].append(char[1])
+        elif char[0] == "c":
+            my_dict["c"].append(char[1])
+
+print(my_dict)
