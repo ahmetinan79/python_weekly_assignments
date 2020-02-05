@@ -1,0 +1,20 @@
+print("Please first enter below your monthly income.\n")
+income = int(input("Monthly Income: "))
+print("""\nPlease enter the expenses of kitchen, education, clothing and transportation 
+respectively with space between them.\n""")
+kitchen, education, clothing, transportation = input("Kitchen, Education, Clothing, Transportation: ").split()
+# In the part above, we ask for monthly income and expenses.
+
+total_expenses = int(kitchen) + int(education) + int(clothing) + int(transportation)
+rate = total_expenses / income
+# We calculate above the rate of monthly expenses to total monthly income.
+
+print(f"""\nMonthly income: {income}
+Total expenses: {total_expenses}
+\tKitchen: {kitchen}
+\tEducation: {education}
+\tClothing: {clothing}
+\tTransportation: {transportation}
+Rate of Total Expenses to Monthly Income: {rate:5.2f}""")
+# In the last part, we print out monthly income, total expenses with sub items and rate of total expenses
+# to monthly income.
