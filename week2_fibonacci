@@ -1,0 +1,9 @@
+number = int(input("Please enter a number: "))
+fibonacci = []  # We define a list to store fibonacci numbers.
+# We use for loop to apply the fibonacci formula.
+for i in range(0, number):  # We use the range function to calculate fibonacci numbers in given range.
+    fibonacci_number = int((((1 + 5 ** 0.5) / 2) ** i - ((1 - 5 ** 0.5) / 2) ** i) / 5 ** 0.5)
+    if fibonacci_number < number:  # We store the numbers until the entered number.
+        fibonacci.append(fibonacci_number)
+        fibonacci_tuple = tuple(fibonacci)  # We convert our list into a tuple and print it out.
+print(fibonacci_tuple)
