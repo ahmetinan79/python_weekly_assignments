@@ -1,0 +1,39 @@
+# 9.1 Create an intersection of sets and print it.
+data1 = (["green", "blue"])
+data2 = (["blue", "yellow"])
+print(set(data1).intersection(set(data2)))  # We use the intersection method in sets.
+
+# 9.2 Create set difference and print them.
+data1 = (["apple", "mango"])
+data2 = (["mango", "orange"])
+print(set(data1).difference(set(data2)))  # We use the difference method in sets.
+print(set(data2).difference(set(data1)))
+
+# 9.3 Find maximum and the minimum value in a set and print them.
+data1 = ([5, 10, 3, 15, 2, 20])
+my_set = set(data1)  # We convert the data1 into a set.
+max_set = set()  # We define an empty set to identify max value.
+min_set = set()  # We define an empty set to identify min value.
+i = 0  # We define two numbers to identify max and min values with a starting value of 0.
+j = 0
+
+for num in my_set:  # We use a for loop to determine the max value.
+    # If a value in our set is greater than i, we define that number temporarily as the max value until we find
+    # the max value. Because, when it reaches to max it does not change anymore and we add it to max_set.
+    if num > i:
+        i = num
+        max_set.clear()
+        max_set.add(num)
+
+for num in my_set:  # # We use a for loop to determine the min value.
+    # Once we converted data1 into a set, our values become in an order from smallest to highest as {2,3,5,10,15,20}.
+    # But, we cannot use index to locate and print this value.
+    if num > j:  # Since our set starts with 2, we first set value of j as 2 with the 1st condition.
+        j = num
+        for num1 in my_set:  # We use another for loop to add all values in my_set except 2 into min_set,
+            # since the rest of the values are greater than 2.
+            if num1 > num:
+                min_set.add(num1)  # We add all values to min_set except 2.
+
+print(max_set)
+print(my_set.difference(min_set))  # In order to print min value we take difference of my_set and min_set.
