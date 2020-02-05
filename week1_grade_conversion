@@ -1,0 +1,22 @@
+while True: # We use while loop to ask for another course conversion.
+    course_name = input("Please enter the course name that you demand grade conversion: ").capitalize()
+    course_num_grade = int(input("Please enter the course grade in the range of 1-100: "))
+    # We demand course name and grade by input function.
+
+    if 90 <= course_num_grade <= 100: # We use if, elif for grade layers.
+        print(f"{course_name}: A")
+    elif 80 <= course_num_grade <= 89:
+        print(f"{course_name}: B")
+    elif 70 <= course_num_grade <= 79:
+        print(f"{course_name}: C")
+    elif 60 <= course_num_grade <= 69:
+        print(f"{course_name}: D")
+    elif course_num_grade < 60:
+        print(f"{course_name}: F")
+
+    another_conversion = input("If you want to continue press Y, to quit press any key: ").upper()
+    # If the student wants to convert another course grade, s/he presses Y or s/he quits the program.
+    if another_conversion == "Y":
+        print("conversion continues...\n")
+    else:
+        brea
