@@ -1,0 +1,16 @@
+ten_characters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]  # We define the letters a-j.
+my_tuple = ()  # We define a tuple variable to generate tuple series.
+word_intervals = {}  # We define a dictionary to form a pair of letters and tuple series.
+i = 1  # We define two counters to generate tuple series.
+j = 0
+
+for char in ten_characters:  # We use a for loop to pair each letter with the tuple series.
+    my_tuple = tuple([num for num in range(i, 11 + j)])
+    # We use the list comprehension to generate series of numbers then we convert these lists into a tuple.
+    word_intervals[char] = my_tuple  # We pair the letters and tuple series and add them into the dictionary.
+    i += 10  # We increase our counters to make sure that they increase the range to generate desired tuple series.
+    j += 10
+
+print(f"word_intervals =")
+for key, val in word_intervals.items():  # We use a for loop to see our key, value series one under another.
+    print(key, val)
