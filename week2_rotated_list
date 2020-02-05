@@ -1,0 +1,15 @@
+slip_left = int(input("Please enter a number to slip the data to the left: "))
+# First, we take the input from the user that how many indexes that s/he wants to slip.
+data_list = []  # We define a list to store the numbers that the user will enter.
+
+while True:  # We use a while loop to take input until the user enters q.
+    data = input("Please enter elements of data one by one. If you want to stop please enter q: ").lower()
+    if data == "q":
+        break
+    else:  # If the user does not press q, then we add the input to our list.
+        data_list.append(data)
+
+list_elements = data_list[slip_left:] + data_list[:slip_left]  # We use slicing and concatenation for the updated list.
+str_elements = " ".join(list_elements)  # We convert the list to a string with join function to get the desired output.
+
+print(f"\nThe new order of list is: {str_elements}")
