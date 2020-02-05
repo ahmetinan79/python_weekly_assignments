@@ -1,0 +1,8 @@
+number = int(input("Please enter a number: ")) # We use input function to demand the number.
+
+for num in range(2,number): # We use for loop to try if any number within the range divides the entered number.
+    if number % num == 0:
+        print("\nThe number that you have entered is NOT a prime number.")
+        break # If any number divides the given number, the code prints the result and the loop stops.
+else: # We must be careful for the indentation of else to get the expected results.
+    print("\nThe number that you have entered is a prime number.")
