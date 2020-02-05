@@ -1,0 +1,17 @@
+student_name = input("Please enter the student's name and surname with space: ")
+print("\nPlease enter student's midterm score, final score and number of missed classes with space between them.")
+print("Please make sure that midterm and final scores are given within the range of 0-100.\n")
+midterm, final, missed_classes = (input("Midterm score, Final score, Missed classes: ")).split()
+# In the part above, we ask for the student data to calculate final grade.
+
+final_grade = (int(midterm) * 0.3) + (int(final) * 0.5) + ((100 - int(missed_classes) * 5) * 0.2)
+# In the line above, we calculate the student's final grade based on the percentage of each item.
+# We need to convert the input to integer with int function.
+
+print(f"""\nStudent's Name: {student_name}
+Student's Midterm Score: {midterm}
+Student's Final Score: {final}
+Student's Number of Missed Classes: {missed_classes}
+Student's Final Grade: {final_grade}""")
+# In the final part, we print out the student information including his/her final grade.
+# Here, we use f-string method to print out each variable.
