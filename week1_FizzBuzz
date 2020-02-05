@@ -1,0 +1,9 @@
+for number in range(1,101): # We use range function for numbers between 1-100.
+    if number % 3 == 0 and number % 5 ==0: # We use if, elif and else to print the numbers according to the conditions.
+        print(f"{number} => FIZZBUZZ") # We use modulus to decide whether numbers are divided by 3 and 5.
+    elif number % 3 == 0:
+        print(f"{number} => FIZZ")
+    elif number % 5 == 0:
+        print(f"{number} => BUZZ")
+    else:
+        print(number)
