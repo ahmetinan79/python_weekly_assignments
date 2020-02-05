@@ -1,0 +1,20 @@
+print("Please enter the principal amount, time as year, and interest rate with space between them.\n")
+principal_amount, time, interest_rate = input("Principal_amount, Time, Interest rate: ").split()
+# In the part above, we ask for the data to calculate the amount of interest.
+
+total_interest = (int(principal_amount) * int(time) * float(interest_rate))/100
+# In the line above, we calculate the interest rate based on the given formula.
+# I took interest rate as floating number just in case the rate is with decimals, i.e. %12.5
+
+average_monthly_interest = total_interest/(12*int(time))
+average_daily_interest = total_interest/(360*int(time))
+total_balance = int(principal_amount) + total_interest
+# We calculate above average daily and monthly interest amounts.
+# Mostly, year is taken as 360 days in interest rate calculations.
+
+print(f"""\nTotal interest: {total_interest}
+Average monthly interest: {average_monthly_interest:5.2f}
+Average daily interest: {average_daily_interest:5.2f}
+Total balance: {total_balance}""")
+# In the last part, we print out Total interest rate amount, Average monthly interest, Average daily interest
+# and the total balance composed of the principal plus total interest.
