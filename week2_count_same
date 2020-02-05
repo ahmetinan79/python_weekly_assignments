@@ -1,0 +1,19 @@
+data_list = []  # We define a list to store the number that the user will enter.
+
+while True:  # We use a while loop to take input until the user enters q.
+    data = input("Please enter elements of data one by one. If you want to stop please enter q: ").lower()
+    if data == "q":
+        while True:  # We use second while loop to make sure that the xth smallest is smaller than the size of the list.
+            xth_smallest = int(input("\nWhich number do you want to know as Xth smallest number in the list?: "))
+            # We ask for the location of the smallest number in the list.
+            if xth_smallest < len(data_list):
+                data_list.sort()  # We sort the list of numbers starting from the smallest number.
+                number = data_list[xth_smallest-1]
+                # We use indexing to locate the number but we subtract 1 as index starts from 0.
+                print(f"\n{xth_smallest}th smallest element in the given list is {number}.")
+                break
+            else:
+                print("The xth smallest should be smaller than the size of the list.")
+        break
+    else:  # If the user does not press q, then we add the input to our list as an integer.
+        data_list.append(int(data))
